@@ -1,0 +1,129 @@
+$mainColor: #00b894;
+.auth-sec {
+    .left-sec {
+        background-image: url(../../assets/Auth/sticky-notes.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-color: #cbc7c724;
+        border-radius: 10px;
+        .logo {
+            font-size: 26px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            strong {
+                color: $mainColor;
+            }
+        }
+    }
+
+    .right-box {
+        padding-top: 55px;
+
+        .title-head {
+            width: 65%;
+            margin: 0 auto 50px auto;
+
+            p {
+                font-size: 14px;
+                color: #959595;
+            }
+        }
+
+        .box-form {
+            form {
+                width: 65%;
+
+                input {
+                    &:focus {
+                        box-shadow: none;
+                    }
+
+                    &.ng-invalid.ng-touched {
+                        border: 1px solid #f00;
+
+                        +span {
+                            svg {
+                                color: #f00;
+                            }
+                        }
+                    }
+                }
+
+                .input-group-text {
+                    position: absolute;
+                    right: 0;
+                    top: 50%;
+                    transform: translate(0, -50%);
+                }
+
+                span {
+                    color: #ccc;
+                }
+
+                .btn {
+                    background-color: $mainColor;
+                    border: 1px solid $mainColor;
+                }
+            }
+        }
+
+        .box-footer {
+            margin-top: 70px;
+
+            p {
+                color: #cbc7c7;
+            }
+
+            a {
+                cursor: pointer;
+                color: $mainColor;
+            }
+        }
+    }
+}
+
+@media (width <= 767px) {
+    .auth-sec  {
+        .right-box  {
+            padding-top:20px;
+            .title-head {
+                margin: 0 auto 30px auto;
+                width: 100%;
+            }
+            .box-form {
+                form {
+    
+                    width: 100%;
+                }
+            }
+            .box-footer {
+                margin-top: 30px;
+            }
+        }
+    }
+}
+
+@media (width <= 991px) {
+
+}
+
+@media (768px <= width <= 991px) {
+    .auth-sec {
+        .right-box {
+            padding-top: 10px;
+            .title-head {
+                width: 100%;
+                margin: 0 auto 30px auto;
+            }
+            .box-footer {
+                margin-top: 50px;
+            }
+        } 
+    }
+}
+
+@media ( 992px <= width <= 1199px ) {
+   
+}

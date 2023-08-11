@@ -1,0 +1,20 @@
+.home-sec {
+    .btn {
+        color: #00b894;
+        border: 1px solid #00b894;
+        transition: all .5s ease-in-out;
+        &:hover {
+            background-color: #00b894;
+            color: #fff;
+        }
+    }
+}
+
+
+@media (width <= 767px) {
+    .home-sec {
+        .btn {
+            width: 100%;
+        }
+    }
+}

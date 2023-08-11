@@ -1,0 +1,20 @@
+<div class="modal d-block" tabindex="-1">
+    <div class="modal-overlay" (click)="onCloseModal()"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Details Note</h5>
+          <button type="button" class="btn-close"  (click)="onCloseModal()"></button>
+        </div>
+        <div class="modal-body">
+          <h6 class="h3 fw-bold">{{noteObj?.title}}</h6>
+          <p class="mb-0 ps-3 ms-3 border-start">
+            {{noteObj?.desc}}
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary"  (click)="onCloseModal()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,27 @@
+
+  <div class="modal d-block">
+    <div class="modal-overlay" (click)="onCloseModal()"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Add Note</h1>
+          <button type="button" class="btn-close" (click)="onCloseModal()"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="addedForm!" (ngSubmit)="onAddNote()">
+            <div class="mb-3">
+              <label for="noteTitle" class="form-label">Title</label>
+              <input formControlName="title" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="noteTitle" class="form-label">Description</label>
+              <textarea formControlName="desc" type="text" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="border-top mt-4 pt-4 d-flex justify-content-end">
+              <button type="submit" class="btn btn-primary" [disabled]="addedForm?.invalid">Add Note</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

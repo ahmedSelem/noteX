@@ -1,0 +1,24 @@
+
+<div class="card note-item d-flex flex-row">
+    <a (click)="onEventNote('view')" class="text-decoration-none text-dark d-block">
+        <div class="card-body">
+            <h4 class="card-title">{{noteObj!.title}}</h4>
+            <p class="card-text mb-0">{{noteObj!.desc}}</p>
+        </div>
+    </a>
+    <div class="card-aside border-start">
+        <ul class="list-unstyled mb-0 d-flex flex-column justify-content-between align-items-center">
+            <li class="text-center">
+                <a class="rounded-circle" (click)="onEventNote('edit')">
+                    <i class="fa-solid fa-pen"></i>
+                </a>
+            </li>
+            <li class="text-center rounded-circle">
+                <a class="rounded-circle" (click)="onEventNote('delete')">
+                    <i class="fa-regular fa-trash-can"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>

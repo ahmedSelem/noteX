@@ -1,0 +1,53 @@
+<form *ngIf="!isLoading; else loading" class="m-auto" [formGroup]="registerForm!" (ngSubmit)="onSubmitRegister()">
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="first_name" type="text" class="form-control" placeholder="First Name">
+        <span *ngIf="registerForm?.get('first_name')!.invalid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-info"></i>
+        </span>
+        <span *ngIf="registerForm?.get('first_name')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="last_name" type="text" class="form-control" placeholder="Last Name">
+        <span *ngIf="registerForm?.get('last_name')!.invalid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-info"></i>
+        </span>
+        <span *ngIf="registerForm?.get('last_name')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="email" type="text" class="form-control" placeholder="Email">
+        <span *ngIf="registerForm?.get('email')!.invalid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-at"></i>
+        </span>
+        <span *ngIf="registerForm?.get('email')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="password" type="text" class="form-control" placeholder="password">
+        <span *ngIf="registerForm?.get('password')!.invalid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-lock"></i>
+        </span>
+        <span *ngIf="registerForm?.get('password')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="age" type="number" class="form-control" placeholder="Age">
+        <span *ngIf="registerForm?.get('age')!.invalid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-arrow-up-9-1"></i>
+        </span>
+        <span *ngIf="registerForm?.get('age')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <button class="btn text-white w-100" type="submit" [disabled]="registerForm!.invalid">Register</button>
+</form>
+
+
+<ng-template #loading>
+    <app-placeholder></app-placeholder>
+</ng-template>

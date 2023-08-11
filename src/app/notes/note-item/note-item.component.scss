@@ -1,0 +1,75 @@
+.note-item {
+    a {
+        width: 80%;
+        cursor: pointer;
+        .card-body {
+            h4 {
+                @extend %ellipsis-text;
+            }
+
+            p {
+                @extend %ellipsis-text;
+            }
+        }
+    }
+
+    .card-aside {
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s ease;
+
+        ul {
+            padding: 10px;
+            height: 100%;
+
+            li {
+                a {
+                    color: inherit;
+                    text-decoration: none;
+                    height: 30px;
+                    width: 30px !important;
+                    line-height: 30px;
+                    font-size: 12px;
+                    display: block;
+                }
+                &:first-of-type {
+                    a {
+                        border: 1px solid #00f;
+                        color: #00f;
+                    }
+                }
+
+                &:last-of-type {
+                    a{
+                        border: 1px solid #f00;
+                        color: #f00;
+                    }
+                }
+            }
+        }
+    }
+
+    &:hover {
+        .card-aside {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+%ellipsis-text {
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (width <= 767px) {
+    .note-item {
+        .card-aside {
+            opacity: 1;
+            visibility: visible;
+            width: 20%;
+        }
+    }
+}

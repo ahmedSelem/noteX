@@ -1,0 +1,26 @@
+<form *ngIf="!isLoading; else loading;" class="m-auto" [formGroup]="loginForm!" (ngSubmit)="onSubmitLogin()">
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="email" type="text" class="form-control" placeholder="Email">
+        <span *ngIf="loginForm?.get('email')!.invalid" class="input-group-text bg-transparent border-0" id="basic-addon2">
+            <i class="fa-solid fa-at"></i>
+        </span>
+        <span *ngIf="loginForm?.get('email')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <div class="inputs-group position-relative mb-4">
+        <input formControlName="password" type="text" class="form-control" placeholder="password">
+        <span *ngIf="loginForm?.get('password')!.invalid" class="input-group-text bg-transparent border-0" id="basic-addon2">
+            <i class="fa-solid fa-lock"></i>
+        </span>
+        <span *ngIf="loginForm?.get('password')!.valid" class="input-group-text bg-transparent border-0">
+            <i class="fa-solid fa-circle-check text-success"></i>
+        </span>
+    </div>
+    <button type="submit" class="btn text-white w-100" [disabled]="loginForm!.invalid">login</button>
+</form>
+
+
+<ng-template #loading>
+    <app-placeholder></app-placeholder>
+</ng-template>

@@ -1,0 +1,37 @@
+<section class="auth-sec vh-100 py-3">
+    <div class="container-fluid h-100">
+        <div class="row h-100">
+            <div class="col-md-6 d-none d-md-block">
+                <div class="left-sec h-100 w-100">
+                    <span class="logo" routerLink="/home">
+                        Note<strong>X</strong>
+                    </span>
+                </div>
+            </div>
+            <div class="col-md-6 h-100 d-flex align-items-center">
+                <div class="right-box w-100">
+                    <div class="title-head text-center">
+                        <h1 class="text-capitalize fw-bold">hello again!</h1>
+                        <p class="mb-0">Welcome Back, Please enter your details.</p>
+                    </div>
+
+                    <div class="box-form" *ngIf="!isLoading; else loading">
+                        <app-register *ngIf="!loginMode" (onRegisterSuccess)="logToggle()"></app-register>
+                        <app-login *ngIf="loginMode"></app-login>
+                    </div>
+                    
+                    <div class="box-footer d-flex justify-content-center">
+                        <p *ngIf="loginMode" class="mb-0">Don't have an account yet ? </p>
+                        <p *ngIf="!loginMode" class="mb-0">you have already account ? </p>
+                        <a (click)="logToggle()" class="text-capitalize ms-2 text-decoration-none">{{loginMode ? 'sign up' : 'Login'}}</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<ng-template #loading>
+    <app-placeholder></app-placeholder>
+</ng-template>

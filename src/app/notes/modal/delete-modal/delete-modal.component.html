@@ -1,0 +1,17 @@
+<div class="modal modal-sm d-block" tabindex="-1">
+    <div class="modal-overlay" (click)="onCloseModal()"></div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Delete Note</h5>
+                <button type="button" class="btn-close"  (click)="onCloseModal()"></button>
+            </div>
+            <div class="modal-body">
+                <h6 class="h2">Are You Sure ?</h6>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger w-100" (click)="onDeleteNote()">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
