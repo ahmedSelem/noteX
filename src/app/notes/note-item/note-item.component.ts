@@ -17,11 +17,11 @@ export class NoteItemComponent {
   @Input() modalHost?: PlaceholderDirective;
   @Input() noteIndex?: number;
 
-  constructor(private _createModal: CreateModalService) {}
+  constructor(private _createModalService: CreateModalService) {}
 
 
   onEventNote(typeClick: string) {
-    this._createModal.createNewCmpProgrammatically(
+    this._createModalService.createNewCmpProgrammatically(
       typeClick,
       this.modalHost!,
       this.noteObj,

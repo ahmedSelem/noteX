@@ -13,7 +13,7 @@
                 </button>
             </div>
             <div *ngIf="!isError; else iserror" class="col-md-12">
-                <div  *ngIf="!isLoading; else isloading;" class="row">
+                <div *ngIf="!isLoading; else isloading;" class="row">
                     <div *ngFor="let note of notesList; let index = index;" class="col-md-4 col-lg-3 mt-4">
                         <app-note-item [noteObj]="note" [modalHost]="modalHost" [noteIndex]="index"></app-note-item>
                     </div>

@@ -1,11 +1,9 @@
 import { NotesComponent } from './notes/notes.component';
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-
+import { Routes } from '@angular/router';
 import { AuthComponent } from './auth/auth.component';
 import { authGuard } from './auth/auth.guard';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     redirectTo: 'notes',
@@ -23,9 +21,3 @@ const routes: Routes = [
     canActivate: [authGuard],
   },
 ];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes, { useHash: true })],
-  exports: [RouterModule],
-})
-export class AppRoutingModule {}
